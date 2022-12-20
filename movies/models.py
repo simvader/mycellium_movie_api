@@ -29,8 +29,8 @@ class Movie(models.Model):
     imdb = models.CharField(max_length=50)
     title = models.CharField(max_length=100)
     year = models.IntegerField()
-    directors = models.ManyToManyField(Director)
-    actors = models.ManyToManyField(Actor)
+    directors = models.ManyToManyField(Director, blank=True)
+    actors = models.ManyToManyField(Actor, blank=True)
 
     def __str__(self):
         return f'{self.title} - {self.year}'
