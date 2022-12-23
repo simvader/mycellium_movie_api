@@ -15,14 +15,14 @@ class Director(models.Model):
     profile = models.ForeignKey('Profile', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.profile.get_full_name()
+        return self.profile.user.get_full_name()
 
 
 class Actor(models.Model):
     profile = models.ForeignKey('Profile', on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.user.get_full_name()
+        return self.profile.user.get_full_name()
 
 
 class Movie(models.Model):
